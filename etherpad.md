@@ -1,4 +1,3 @@
-
 EtherPad notes
 ==============
 
@@ -25,8 +24,8 @@ An alternative to backticks `$(COMMAND)`. The following are identical:
 
 Backticks are deprecated:
 
- * http://stackoverflow.com/questions/4708549/shell-programming-whats-the-difference-between-command-and-command
- * http://stackoverflow.com/questions/9449778/what-is-the-benefit-of-using-instead-of-backticks-in-shell-scripts
+ * [StackOverflow](http://stackoverflow.com/questions/4708549/shell-programming-whats-the-difference-between-command-and-command)
+ * [StackOverflow](http://stackoverflow.com/questions/9449778/what-is-the-benefit-of-using-instead-of-backticks-in-shell-scripts)
 
 Loops can be typed on a single line e.g.:
 
@@ -94,6 +93,18 @@ Delete branch whether or not it has been merged:
 Git can be used with a directory that is held within DropBox or Google
 Drive. There might be issues when trying to push or pull when DropBox
 or Google Drive are synching though.
+
+If you have added a file to the Git staging area, using `git add` then you can remove it again using `git reset` e.g. after changing `sample.txt`:
+
+    # Add sample.txt to the staging area.  
+    $ git add sample.txt
+
+    # Change your mind and remove it from the staging area.
+    $ git reset sample.txt
+
+See [StackOverflow](http://stackoverflow.com/questions/348170/undo-git-add-before-commit).
+
+There is also `git rm --cached filename` but this requires care in remembering the `--cached` flag.
 
 `.gitignore`
 ------------
@@ -287,4 +298,16 @@ Viewing images via `ipython`:
     In [3]: img = mpimg.imread('smooth-soup.png')
     In [4]: mpplt.imshow(img)
 
+Testing
+-------
 
+If you are running Git Bash and nosetests gives `command not found`, do the following (replacing `USERNAME` with your username):
+
+    $ alias nosetests='python /c/Users/USERNAME/Anaconda/Scripts/nosetests-script.py'
+
+Documenting code
+----------------
+
+[Doxygen](http://www.stack.nl/~dimitri/doxygen/) is a free, and widely-used, tool that supports a notation for commenting C, C++, FORTRAN, Python and other code - in particular function, sub-routine and method arguments and return types. Once the code has been commented using the Doxygen notation, the Doxygen tool will parse this into HTML or LaTeX. This is useful if you want to share documentation about your modules, classes, functions, subroutines, methods and their arguments and return types, what they do and how they behave. This can help people understand what the code does and how to use it in their own code without having to look at the source code.
+
+Java has it's own, equivalent, tool, [JavaDoc](http://www.oracle.com/technetwork/java/javase/documentation/index-jsp-135444.html).
